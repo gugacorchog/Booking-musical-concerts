@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { graphqlHttp } = require('express-graphql');
+const expressGraphQl = require('express-graphql').graphqlHTTP
 const mongoose = require('mongoose');
 
 const graphQlSchema = require('./graphql/schema/index');
@@ -26,7 +26,7 @@ app.use(isAuth);
 
 app.use(
   '/graphql',
-  graphqlHttp({
+  expressGraphQl({
     schema: graphQlSchema,
     rootValue: graphQlResolvers,
     graphiql: true
@@ -40,7 +40,7 @@ mongoose
     }@cluster0-ntrwp.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`
   )
   .then(() => {
-    app.listen(8000);
+    app.listen(3000);
   })
   .catch(err => {
     console.log(err);
