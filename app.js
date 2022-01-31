@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const expressGraphQl = require('express-graphql').graphqlHTTP
+const { graphqlHTTP } = require('express-graphql')
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 const graphQlSchema = require('./graphql/schema/index');
 const graphQlResolvers = require('./graphql/resolvers/index');
@@ -26,7 +27,7 @@ app.use(isAuth);
 
 app.use(
   '/graphql',
-  expressGraphQl({
+  graphqlHTTP({
     schema: graphQlSchema,
     rootValue: graphQlResolvers,
     graphiql: true
@@ -35,9 +36,9 @@ app.use(
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGO_USER}:${
-      process.env.MONGO_PASSWORD
-    }@cluster0-ntrwp.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`
+      
+    process.env.MONGO_URI
+
   )
   .then(() => {
     app.listen(3000);

@@ -1,25 +1,62 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import AuthPage from './pages/Auth';
+import BookingsPage from './pages/Bookings';
+import EventsPage from './pages/Events';
+import MainNavigation from './components/Navigation/MainNavigation';
+import AuthContext from './context/auth-context';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    token: null,
+    userId: null
+  };
+
+  login = (token, userId, tokenExpiration) => {
+    this.setState({ token: token, userId: userId });
+  };
+
+  logout = () => {
+    this.setState({ token: null, userId: null });
+  };
+
+  render() {
+    return (
+      <BrowserRouter>
+        <React.Fragment>
+          <AuthContext.Provider
+            value={{
+              token: this.state.token,
+              userId: this.state.userId,
+              login: this.login,
+              logout: this.logout
+            }}
+          >
+            <MainNavigation />
+            <main className="main-content">
+              <Routes>
+                {this.state.token && <Route from="/" to="/events" exact />}
+                {this.state.token && (
+                  <Route from="/auth" to="/events" exact />
+                )}
+                {!this.state.token && (
+                  <Route path="/auth" element={<AuthPage/>}/>
+                )}
+                <Route path="/events" element={<EventsPage/>} />
+                {this.state.token && (
+                  <Route path="/bookings" element={<BookingsPage/>} />
+                )}
+                {!this.state.token && <Route to="/auth" exact />}
+              </Routes>
+            </main>
+          </AuthContext.Provider>
+        </React.Fragment>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
