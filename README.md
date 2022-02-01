@@ -11,11 +11,12 @@
 
 ## Description 
 
-```
+```md
 An app for bookings 
 Where the User can create his events making them available for bookings 
 Or after the login the user can access events made by other users 
 So he can book for this event
+
 ```
 ##
 ## Acceptance Criteria
@@ -61,8 +62,11 @@ So he can book for this event
 ## Installation
 
 #### npm install
-#### npm start ( You need to run the frontend server and backend server separeted)
 
+##
+## Usage
+#### npm start to run the server 
+#### ( You need to run the frontend server and backend server separeted )
 
 ##
 ## Technologies
@@ -89,7 +93,7 @@ So he can book for this event
 ##### mongoose: "^6.1.8"
 ##### nodemon: "^2.0.15"
 
-
+##
 ## Question
 Questions? Let me know:  
 
