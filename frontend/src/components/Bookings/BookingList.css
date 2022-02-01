@@ -1,0 +1,17 @@
+.Booking_list {
+    list-style: none;
+    margin: 0 auto;
+    margin-top: 2%;
+    padding: 0;
+    
+}
+
+.Booking_item {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: black;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
