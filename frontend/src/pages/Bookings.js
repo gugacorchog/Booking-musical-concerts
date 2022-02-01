@@ -65,7 +65,7 @@ class BookingsPage extends Component {
           mutation {
             cancelBooking(bookingId: "${bookingId}") {
               _id
-                title
+              title
             }
           }
         `

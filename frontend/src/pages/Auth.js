@@ -5,7 +5,8 @@ import AuthContext from '../context/auth-context';
 
 class AuthPage extends Component {
   state = {
-    isLogin: true
+    isLogin: true,
+    isError: false,
   };
 
   static contextType = AuthContext;
@@ -26,6 +27,9 @@ class AuthPage extends Component {
     event.preventDefault();
     const email = this.emailEl.current.value;
     const password = this.passwordEl.current.value;
+    this.setState((prevState) => {
+      return { ...prevState, isError:false };
+    });
 
     if (email.trim().length === 0 || password.trim().length === 0) {
       return;
@@ -79,6 +83,9 @@ class AuthPage extends Component {
         }
       })
       .catch(err => {
+        this.setState((prevState) => {
+          return { ...prevState, isError:true };
+        });
         console.log(err);
       });
   };
@@ -100,6 +107,9 @@ class AuthPage extends Component {
             Switch to {this.state.isLogin ? 'Signup' : 'Login'}
           </button>
         </div>
+        {this.state.isError && (
+          <div>Sorry there was as error Loggin you in. Please try again!</div>
+        )}
       </form>
     );
   }
