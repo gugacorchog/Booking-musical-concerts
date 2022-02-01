@@ -11,11 +11,11 @@
 
 ## Description 
 
-```md
-An app for bookings 
-Where the User can create his events making them available for bookings 
-Or after the login the user can access events made by other users 
-So he can book for this event
+```
+AN app for bookings 
+WHERE the User can create his events making them available for bookings 
+OR after the login the user can access events made by other users 
+SO he can book for this event
 
 ```
 ##
