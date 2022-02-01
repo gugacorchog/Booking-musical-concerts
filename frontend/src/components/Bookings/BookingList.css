@@ -1,17 +1,22 @@
-.Booking_list {
-    list-style: none;
-    margin: 0 auto;
-    margin-top: 2%;
-    padding: 0;
+.bookings_list {
+    position: relative;
+    padding: 1rem;
+    width: 30rem;
+    max-width: 80%;
+    margin-top: 8%;
+    font-weight: bold;
+    font-size: 30px;
     
 }
 
-.Booking_item {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    border: black;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
+.bookings_item {
+    margin: 0;
+    font-size: 1.5rem;
+    color: black;
 }
 
+.btnBookings {
+    background: rgb(231, 171, 6);
+    color: white;
+    font-weight: bold;
+}

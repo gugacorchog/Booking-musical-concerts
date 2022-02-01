@@ -46,7 +46,7 @@
     vertical-align: middle;
     margin: 0;
   }
-  
+ 
   .main-navigation__items a:hover,
   .main-navigation__items a:active,
   .main-navigation__items a.active,
@@ -55,4 +55,24 @@
     background: #535252;
     color: white;
     border-radius: 5px;
+  }
+
+  .back-ground-photo {
+
+    position: absolute;
+    height: 645px;
+    width: 100%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
+  .error {
+    position: relative;
+    color: rgb(182, 41, 41);
+    background-color: aliceblue;
+    width: 100%;
+    margin-top: 3px;
+    align-items: center;
   }

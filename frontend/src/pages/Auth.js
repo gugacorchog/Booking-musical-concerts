@@ -108,7 +108,7 @@ class AuthPage extends Component {
           </button>
         </div>
         {this.state.isError && (
-          <div>Sorry there was as error Loggin you in. Please try again!</div>
+          <div className='error'>Sorry there was as error Loggin you in. Please try again!</div>
         )}
       </form>
     );

@@ -11,12 +11,12 @@ const BookingList = props => (
                     {new Date(booking.createdAt).toLocaleDateString()}
                     </div>
                     <div className="bookings_item-actions">
-                        <button className="btn" onClick={props.onDelete.bind(this, booking._id)}>Cancel</button>
+                        <button className="btnBookings" onClick={props.onDelete.bind(this, booking._id)}>Cancel</button>
                 </div>
             </li>
            );      
        })}
    </ul> 
 );
- 
+
 export default BookingList;

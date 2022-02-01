@@ -1,13 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
 import AuthContext from '../../context/auth-context';
 import './MainNavigation.css';
+import imgBackground from '../../assets/BackImage.jpeg'
 
 const MainNavigation = props => (
   <AuthContext.Consumer>
     {context => {
       return (
+        <div>
         <header className="main-navigation">
           <div className="main-navigation__logo">
             <h1>BookingEvents</h1>
@@ -35,6 +36,9 @@ const MainNavigation = props => (
             </ul>
           </nav>
         </header>
+        <img className="back-ground-photo" src={imgBackground} alt="#" />
+         
+        </div>
       );
     }}
   </AuthContext.Consumer>

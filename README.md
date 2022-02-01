@@ -7,8 +7,6 @@
 ![Size](https://img.shields.io/github/repo-size/gugacorchog/BookingEvents?color=white)
 ![LastCommit](https://img.shields.io/github/last-commit/gugacorchog/BookingEvents?color=purple)
 
-
-
 ## Description 
 
 ```
