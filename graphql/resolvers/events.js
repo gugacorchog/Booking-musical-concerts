@@ -42,5 +42,18 @@ module.exports = {
       console.log(err);
       throw err;
     }
+  },
+  cancelEvent: async (args, req) => {
+    if (!req.isAuth) {
+      throw new Error('Unauthenticated!');
+    }
+    try {
+      const event = await Event.findById(args.eventId);
+      // const event = transformEvent(booking.event);
+      await Event.deleteOne({ _id: args.eventId });
+      return event;
+    } catch (err) {
+      throw err;
+    }
   }
 };

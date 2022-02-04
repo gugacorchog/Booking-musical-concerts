@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path')
 const bodyParser = require('body-parser');
 const { graphqlHTTP } = require('express-graphql')
 const mongoose = require('mongoose');
@@ -10,6 +11,10 @@ const isAuth = require('./middleware/is-auth');
 const { wrap } = require('module');
 
 const app = express();
+
+if ( process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, "./frontend/build")))
+}
 
 app.use(bodyParser.json());
 

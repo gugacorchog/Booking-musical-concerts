@@ -6,6 +6,7 @@ import EventList from '../components/Events/EventList/EventList';
 import Spinner from '../components/Spinner/Spinner';
 import AuthContext from '../context/auth-context';
 import './Events.css';
+import eventItem from '../components/Events/EventList/EventItem/EventItem';
 
 class EventsPage extends Component {
   state = {
@@ -206,6 +207,43 @@ class EventsPage extends Component {
     this.isActive = false;
   }
 
+  deleteEventHandler = eventId => {
+    console.log(eventId)
+    this.setState({ isLoading: true });
+    const requestBody = {
+      query: `
+          mutation {
+            cancelEvent(eventId: "${eventId}") {
+              _id
+              title
+            }
+          }
+        `
+    };
+
+    fetch('http://localhost:3001/graphql', {
+      method: 'POST',
+      body: JSON.stringify(requestBody),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + this.context.token
+      }
+    })
+      .then(res => {
+        if (res.status !== 200 && res.status !== 201) {
+          throw new Error('Failed!');
+        }
+        return res.json();
+      })
+      .then(resData => {
+        window.location.pathname= '/Bookings'
+      })
+      .catch(err => {
+        console.log(err);
+        this.setState({ isLoading: false });
+      });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -275,6 +313,7 @@ class EventsPage extends Component {
             events={this.state.events}
             authUserId={this.context.userId}
             onViewDetail={this.showDetailHandler}
+            onDelete={this.deleteEventHandler}
           />
         )}
       </React.Fragment>
