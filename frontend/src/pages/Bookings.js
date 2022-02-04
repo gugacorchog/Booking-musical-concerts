@@ -33,7 +33,7 @@ class BookingsPage extends Component {
           }
         `
     };
-
+    
     fetch('/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
