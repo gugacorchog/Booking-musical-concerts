@@ -13,7 +13,7 @@ const { wrap } = require('module');
 const app = express();
 
 if ( process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, "./frontend/build")))
+  app.use(express.static(path.join(__dirname, "../frontend/build")))
 }
 
 app.get('*', (req, res) => {
