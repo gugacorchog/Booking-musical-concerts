@@ -1,35 +1,21 @@
 {
-  "name": "booking-musical-concerts",
+  "name": "bookingevents",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "![License](https://img.shields.io/github/license/gugacorchog/BookingEvents) ![Languages](https://img.shields.io/github/languages/count/gugacorchog/BookingEvents?color=yellow) ![Languages](https://img.shields.io/github/languages/top/gugacorchog/BookingEvents?color=red) ![Size](https://img.shields.io/github/repo-size/gugacorchog/BookingEvents?color=white) ![LastCommit](https://img.shields.io/github/last-commit/gugacorchog/BookingEvents?color=purple)",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "install": "npm i && cd frontend && npm i",
+    "start": "node backend/app.js",
+    "install": "cd backend && npm i && cd ../frontend && npm i",
     "build": "cd frontend && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gugacorchog/Booking-musical-concerts.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Gustavo Corchog",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gugacorchog/Booking-musical-concerts/issues"
   },
-  "homepage": "https://github.com/gugacorchog/Booking-musical-concerts#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.1",
-    "dotenv": "^14.3.2",
-    "express": "^4.17.2",
-    "express-graphql": "^0.12.0",
-    "graphql": "^15.8.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.8"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  }
+  "homepage": "https://github.com/gugacorchog/Booking-musical-concerts#readme"
 }

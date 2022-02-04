@@ -1,0 +1,33 @@
+{
+  "name": "booking-musical-concerts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gugacorchog/Booking-musical-concerts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gugacorchog/Booking-musical-concerts/issues"
+  },
+  "homepage": "https://github.com/gugacorchog/Booking-musical-concerts#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
