@@ -77,7 +77,20 @@
     align-items: center;
   }
 
+  @media screen and (max-width: 1124px) {
+    .back-ground-photo {
+      width: 100%;
+      height: 91%;
+      left: 50%;
+      top: 54%;
+
+    }
+  }
+
   @media screen and (max-width: 812px) {
+    .back-ground-photo {
+      height: 94%;
+    }
     .main-navigation__items a{
       padding: -0.75rem 0.5rem;
     }
@@ -97,12 +110,21 @@
       width: 66%;
     }
   }
-
-  @media screen and (max-width: 1124px) {
+  
+  @media screen and (max-width: 360px) {
     .back-ground-photo {
-      height: 754px;
-      left: 50%;
-      top: 54%;
-
+      width: 91%;
+    }
+    .imputEmail{
+      width: 66%;
+    }
+    .imputPassword{
+      width: 66%;
+    }
+    .buttonSubmit {
+      width: 75.3%;
+    }
+    .buttonLogin{
+      width: 76%;
     }
   }
