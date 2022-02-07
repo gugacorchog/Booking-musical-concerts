@@ -16,6 +16,9 @@ const events = async eventIds => {
 const singleEvent = async eventId => {
   try {
     const event = await Event.findById(eventId);
+    if (!event) {
+      return null;
+    }
     return transformEvent(event);
   } catch (err) {
     throw err;

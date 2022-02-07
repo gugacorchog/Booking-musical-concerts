@@ -76,3 +76,33 @@
     margin-top: 3px;
     align-items: center;
   }
+
+  @media screen and (max-width: 812px) {
+    .main-navigation__items a{
+      padding: -0.75rem 0.5rem;
+    }
+    .main-navigation__items button{
+      padding: -0.75rem 0.5rem;
+    }
+    .buttonSubmit {
+      width: 73.3%;
+    }
+    .buttonLogin{
+      width: 76%;
+    }
+    .imputEmail{
+      width: 66%;
+    }
+    .imputPassword{
+      width: 66%;
+    }
+  }
+
+  @media screen and (max-width: 1124px) {
+    .back-ground-photo {
+      height: 754px;
+      left: 50%;
+      top: 54%;
+
+    }
+  }

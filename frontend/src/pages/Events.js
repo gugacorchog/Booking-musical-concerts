@@ -243,7 +243,7 @@ class EventsPage extends Component {
         this.setState({ isLoading: false });
       });
   };
-
+  
   render() {
     return (
       <React.Fragment>
@@ -254,7 +254,7 @@ class EventsPage extends Component {
             canCancel
             canConfirm
             onCancel={this.modalCancelHandler}
-            onConfirm={this.modalConfirmHandle}
+            onConfirm={this.modalConfirmHandler}
             confirmText="Confirm"
           >
             <form>
